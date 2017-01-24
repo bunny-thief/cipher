@@ -28,13 +28,13 @@ arr2.forEach(function(e) {
   }
 
   //a - m
-  else if (e > 96 && e < 109) {
+  else if (e > 96 && e < 110) {
     arr.push(e + key);
     arr.shift();
   }
 
   //n - z
-  else if (e > 110 && e < 123) {
+  else if (e > 109 && e < 123) {
     arr.push(96 + (e - 122 + key));
     //arr.push(e - key);
     arr.shift();
