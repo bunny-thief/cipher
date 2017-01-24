@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Cipher-n</title>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="cipher.css">
 <script src="cipher.js">
 
 </script>
@@ -20,7 +22,7 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Cipher-n</h1>
+        <h1 class="main">Cipher-n</h1>
       </div>
       <div class="">
         <h2>Cipher-n</h2>
@@ -30,6 +32,7 @@
      rows="4" cols="50" placeholder="Enter text to be ciphered here..."></textarea>
         </div>
         <button class="btn btn-default-info submit" type="submit">Submit</button>
+        <button class="btn btn-default-info clear" type="submit">Clear</button>
         <div>
           <p class="result"></p>
         </div>
@@ -39,11 +42,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script>
+    //submit button actions
       $(".submit").on("click", function() {
         var string = $(".cipherText").val();
         $(".result").text(cipherN(string,13));
-        $(".cipherText").text("");
+        $(".cipherText").val("");
       });
-    </script>
+      //clear button actions
+      $(".clear").on("click", function () {
+        $(".cipherText").val("");
+        $(".result").text("");
+      });
+          </script>
   </body>
 </html>
