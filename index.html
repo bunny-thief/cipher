@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Cipher-n</title>
-    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <title>CIPHER-n</title>
+    <link href="https://fonts.googleapis.com/css?family=Caesar+Dressing|VT323" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="cipher.css">
 <script src="cipher.js">
 
@@ -11,25 +11,24 @@
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
-    <script>
-    $( document ).ready(function() {
-        console.log( "document loaded" );
-    });
 
-
-    </script>
   </head>
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1 class="main">Cipher-n</h1>
+        <h1 class="main">CIPHER-n</h1>
       </div>
       <div class="">
+        <h1><span class="work glyphicon glyphicon-alert"></span> Work under way <span class="work glyphicon glyphicon-alert"></h1>
         <h2>Cipher-n</h2>
         <p>This cipher will accept text as an input and shift each letter by a desired number to apply a simple form of encryption. The encrypted text will be output below.</p>
         <div class="">
-          <textarea class="cipherText" name="textarea"
-     rows="4" cols="50" placeholder="Enter text to be ciphered here..."></textarea>
+          <form class="" action="index.html" method="post">
+            <textarea class="cipherText" name="textarea"
+            rows="4" cols="50" placeholder="Enter text to be ciphered here..." autofocus></textarea>
+            <input type="number" name="shiftNumber" size="4"value="">
+
+          </form>
         </div>
         <button class="btn btn-default-info submit" type="submit">Submit</button>
         <button class="btn btn-default-info clear" type="submit">Clear</button>
@@ -42,12 +41,31 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script>
+    $( document ).ready(function() {
+        console.log( "document loaded" );
+    });
+    </script>
+    <script>
+
+    // //Not working
+    // $(.work).fadeOut( 3000, function () {
+    //   $(.work).fadeIn(3000);
+    // });
     //submit button actions
       $(".submit").on("click", function() {
         var string = $(".cipherText").val();
         $(".result").text(cipherN(string,13));
         $(".cipherText").val("");
       });
+
+      // Enter keypress
+      // Not working
+      // $(".submit").on("keypress", function() {
+      //   var string = $(".cipherText").val();
+      //   $(".result").text(cipherN(string, 13));
+      //   $(".cipherText").val("");
+      // });
+
       //clear button actions
       $(".clear").on("click", function () {
         $(".cipherText").val("");
