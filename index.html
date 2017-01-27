@@ -19,7 +19,7 @@
         <h1 class="main">CIPHER-n</h1>
       </div>
       <div class="">
-        <h1><span class="work glyphicon glyphicon-alert"></span> Work under way <span class="work glyphicon glyphicon-alert"></h1>
+        <h1 class="work"><span class="work glyphicon glyphicon-alert"></span> Work under way <span class="work glyphicon glyphicon-alert"></h1>
         <h2>Cipher-n</h2>
         <p>This cipher will accept text as an input and shift each letter by a desired number to apply a simple form of encryption. The encrypted text will be output below.</p>
         <div class="">
@@ -41,22 +41,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script>
-    $( document ).ready(function() {
+    $(document).ready(function() {
         console.log( "document loaded" );
+      //   var i = 0;
+      // while (i < 1) {
+      //   //Not working
+      //   $(".work").fadeToggle(3000);
+      //   i++;
+      //     }
     });
     </script>
     <script>
 
-    // //Not working
-    // $(.work).fadeOut( 3000, function () {
-    //   $(.work).fadeIn(3000);
-    // });
     //submit button actions
       $(".submit").on("click", function() {
         var string = $(".cipherText").val();
         $(".result").text(cipherN(string,13));
         $(".cipherText").val("");
-      });
+            });
 
       // Enter keypress
       // Not working
