@@ -1,11 +1,18 @@
 //caps and lowercase letters
-function cipherN(str, key) { // LBH QVQ VG!
+function cipherN(str) { // LBH QVQ VG!
 
 var arr = [];
 var arr2 = [];
 
+//capture number at end of string, convert to string
+var key = /-?\d+$/g.exec(str);
+key = Number(key[0]);
+
+//remove number at end of string
+str = str.substr(0, (str.search(/-?\d+$/g) - 1));
+
 //split str into an array of chars
-  arr = str.split("");
+arr = str.split("");
 
 //convert letters into unicode number
 arr.forEach(function(e) {
@@ -13,26 +20,25 @@ arr.forEach(function(e) {
   });
   //console.log("charCodeAt: arr2" + arr2);
 
+//positive number
+if(key > 0) {
 arr2.forEach(function(e) {
   //A - M
   if (e > 64 && e < 78) {
     arr.push(e + key);
     arr.shift();
   }
-
   //N - Z
   else if (e > 77 && e < 91) {
     arr.push(64 + (e - 90 + key));
     //arr.push(e - key);
     arr.shift();
   }
-
   //a - m
   else if (e > 96 && e < 110) {
     arr.push(e + key);
     arr.shift();
   }
-
   //n - z
   else if (e > 109 && e < 123) {
     arr.push(96 + (e - 122 + key));
@@ -45,13 +51,45 @@ arr2.forEach(function(e) {
     arr.shift();
   }
  });
+}
+ //negative number
+ else if (key < 0) {
+   arr2.forEach(function(e) {
 
-  //console.log("
+     //N-Z
+   if (e + key >  64 && e + key < 91) {
+       arr.push(e + key);
+       arr.shift();
+     }
+
+   //n-z
+    else if (e + key >  96 && e + key < 123) {
+      arr.push(e + key);
+      arr.shift();
+   }
+   //A-M
+     else if (e + key < 65) {
+       arr.push(90 + (key + (e - 64)));
+       arr.shift();
+}
+
+//a-m
+  else if (e + key < 97) {
+    arr.push(90 + (key + (e - 96)));
+    arr.shift();
+}
+     else {
+       arr.push(e);
+       arr.shift();
+     }
+ });
+ }
+  //convert back to char
   arr.forEach(function(e) {
     arr2.push(String.fromCharCode(e));
     arr2.shift();
   });
-
+//join chars in array back to a string
   str = arr2.join("");
   return str;
 }
