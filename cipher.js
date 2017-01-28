@@ -12,7 +12,7 @@ key = Number(key[0]);
 str = str.substr(0, (str.search(/-?\d+$/g) - 1));
 
 //split str into an array of chars
-  arr = str.split("");
+arr = str.split("");
 
 //convert letters into unicode number
 arr.forEach(function(e) {
@@ -55,30 +55,33 @@ arr2.forEach(function(e) {
  //negative number
  else if (key < 0) {
    arr2.forEach(function(e) {
-//A-M
-  if (e > 64 && e < 78) {
-    arr.push((90 + e)- (64 + key));
-    arr.shift();
-  }
-  //N-Z
-  else if (e > 77 && e < 91) {
-    arr.push(e - key);
-    arr.shift();
-  }
+
+     //N-Z
+   if (e + key >  64 && e + key < 91) {
+       arr.push(e + key);
+       arr.shift();
+     }
+
+   //n-z
+    else if (e + key >  96 && e + key < 123) {
+      arr.push(e + key);
+      arr.shift();
+   }
+   //A-M
+     else if (e + key < 65) {
+       arr.push(90 + (key + (e - 64)));
+       arr.shift();
+}
+
 //a-m
-  else if (e > 110 && e < 123) {
-    arr.push(e - key);
+  else if (e + key < 97) {
+    arr.push(90 + (key + (e - 96)));
     arr.shift();
-  }
-//n-z
-  else if (e > 96 && e < 109) {
-  arr.push((122 + e)- (96 + key));
-    arr.shift();
-  }
-  else {
-    arr.push(e);
-    arr.shift();
-  }
+}
+     else {
+       arr.push(e);
+       arr.shift();
+     }
  });
  }
   //convert back to char
