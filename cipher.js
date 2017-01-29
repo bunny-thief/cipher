@@ -7,6 +7,7 @@ var arr2 = [];
 //capture number at end of string, convert to string
 var key = /-?\d+$/g.exec(str);
 key = Number(key[0]);
+key = key % 26;
 
 //remove number at end of string
 str = str.substr(0, (str.search(/-?\d+$/g) - 1));
