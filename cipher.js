@@ -24,27 +24,32 @@ arr.forEach(function(e) {
 //positive number
 if(key > 0) {
 arr2.forEach(function(e) {
+  //Check for spaces
+  if (e === 32) {
+    arr.push(e);
+    arr.shift();
+  }
 
   //A - M
-  if (e > 64 && e < 78) {
+  else if (e > 64 && e < 91 && e + key > 64 && e + key < 91) {
     arr.push(e + key);
     arr.shift();
   }
 
   //N - Z
-  else if (e > 77 && e < 91) {
+  else if (e > 64 && e < 91 && e + key > 64 && e + key > 90) {
     arr.push(64 + (e - 90 + key));
     arr.shift();
   }
 
   //a - m
-  else if (e > 96 && e < 110) {
+  else if (e > 96 && e < 123 && e + key > 96 && e + key < 123) {
     arr.push(e + key);
     arr.shift();
   }
 
   //n - z
-  else if (e > 109 && e < 123) {
+  else if (e > 96 && e < 123 && e + key > 96 && e + key > 122) {
     arr.push(96 + (e - 122 + key));
     arr.shift();
   }
@@ -70,19 +75,19 @@ arr2.forEach(function(e) {
          arr.push(90 + (key + (e - 64)));
          arr.shift();
        }
+       //N-Z works!
+       else if (e > 77 && e < 91 && e + key >  64 && e + key < 91) {
+         arr.push(e + key);
+         arr.shift();
+       }
      //a-m
      else if (e > 96 && e < 123 && e + key < 97) {
        arr.push(122 + (key + (e - 96)));
        arr.shift();
      }
 
-     //N-Z works!
-     else if (e + key >  64 && e + key < 91) {
-       arr.push(e + key);
-       arr.shift();
-     }
    //n-z works!
-   else if (e + key >  96 && e + key < 123) {
+   else if (e > 96 && e < 123 && e + key >  96 && e + key < 123) {
      arr.push(e + key);
      arr.shift();
    }
