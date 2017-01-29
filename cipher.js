@@ -39,18 +39,18 @@ arr2.forEach(function(e) {
   //a - m
   else if (e > 96 && e < 110) {
     arr.push(e + key);
-    arr.shift();
+    arr.shift();
   }
 
   //n - z
   else if (e > 109 && e < 123) {
     arr.push(96 + (e - 122 + key));
-    arr.shift();
+    arr.shift();
   }
 
   else {
-    arr.push(e);
-    arr.shift();
+    arr.push(e);
+    arr.shift();
   }
  });
 
@@ -59,17 +59,22 @@ arr2.forEach(function(e) {
  //negative number
  else if (key < 0) {
    arr2.forEach(function(e) {
+     //Check for spaces
+     if (e === 32) {
+       arr.push(e);
+       arr.shift();
+       }
 
      //a-m
-     if (e + key < 97) {
+     else if (e + key < 97) {
        arr.push(122 + (key + (e - 96)));
        arr.shift();
      }
 
      //N-Z works!
      else if (e + key >  64 && e + key < 91) {
-       arr.push(e + key);
-       arr.shift();
+       arr.push(e + key);
+       arr.shift();
      }
    //n-z works!
    else if (e + key >  96 && e + key < 123) {
@@ -81,18 +86,13 @@ arr2.forEach(function(e) {
      arr.push(90 + (key + (e - 64)));
      arr.shift();
    }
-
-   else {
-     arr.push(e);
-     arr.shift();
-     }
    });
  }
 
   //convert back to char
   arr.forEach(function(e) {
-    arr2.push(String.fromCharCode(e));
-    arr2.shift();
+    arr2.push(String.fromCharCode(e));
+    arr2.shift();
   });
 
 //join chars in array back to a string
