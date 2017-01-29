@@ -65,9 +65,13 @@ arr2.forEach(function(e) {
        arr.push(e);
        arr.shift();
        }
-
+       //A-M works!
+       else if (e > 64 && e < 91 && e + key < 65) {
+         arr.push(90 + (key + (e - 64)));
+         arr.shift();
+       }
      //a-m
-     else if (e + key < 97) {
+     else if (e > 96 && e < 123 && e + key < 97) {
        arr.push(122 + (key + (e - 96)));
        arr.shift();
      }
@@ -82,11 +86,7 @@ arr2.forEach(function(e) {
      arr.push(e + key);
      arr.shift();
    }
-   //A-M works!
-   else if (e + key < 65) {
-     arr.push(90 + (key + (e - 64)));
-     arr.shift();
-   }
+
    });
  }
 
