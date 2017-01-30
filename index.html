@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>CIPHER-n</title>
+    <title>Cipher n</title>
     <link href="https://fonts.googleapis.com/css?family=Caesar+Dressing|VT323" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="cipher.css">
 <script src="cipher.js">
@@ -16,13 +16,18 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1 class="main">CIPHER-n</h1>
+        <h1 class="main">CIPHER n</h1>
       </div>
       <div class="">
-        <h1 class="work"><span class="work glyphicon glyphicon-alert"></span> Work under way <span class="work glyphicon glyphicon-alert"></h1>
-        <h2>Cipher-n</h2>
-        <p>This cipher will accept text as an input and shift each letter by a desired number to apply a simple form of encryption.</p>
-        <p> The text should contain a space separated integer which be the amount of the shift. The encrypted text will be output below.</p>
+        <!-- <h1 class="work"><span class="work glyphicon glyphicon-alert"></span> Work under way <span class="work glyphicon glyphicon-alert"></h1> -->
+        <h2>Cipher n</h2>
+
+      <p><strong>Usage:</strong> A message to be encrypted is passed by entering it into the text area below. The shift amount is included at the end of the message and needs to be separated by a space. The shift amount can be positive or negative.
+        <p>After the text is entered, clicking on the submit button will take the text and apply the shift, remove the shift number from the end of the input text and return the encrypted text below the text area.</P>
+          <p>The input text area and encoded output message can be cleared by clicking on the Clear button.</p>
+          <p>Entering the following text into the text area <strong>We attack at dawn</strong> 15 would return <strong>Lt piiprz pi splc</strong>. To decode the message you simply paste the encoded message and add -15 at the end: <strong>Lt piiprz pi splc -15</strong>.</p>
+        <!-- <p>This cipher will accept text as an input and shift each letter by a desired number to apply a simple form of encryption.</p>
+        <p> The text should contain a space separated integer which be the amount of the shift. The encrypted text will be output below.</p> -->
         <div class="">
           <form class="" action="index.html" method="post">
             <textarea class="cipherText" name="textarea"
