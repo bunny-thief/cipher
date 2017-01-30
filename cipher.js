@@ -105,7 +105,3 @@ arr2.forEach(function(e) {
   str = arr2.join("");
   return str;
 }
-// Change the inputs below to test
-//cipherN("SERR PBQR PNZC", 13);
- // cipherN("serr pbqr pnzc", 13);
-  cipherN("FrEe CoDe CaMp", 13);
