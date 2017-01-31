@@ -1,4 +1,4 @@
-# Cipher n
+# [Cipher n](https://the-thief.github.io/cipher/)
 
 Cipher n is simple encryption method that takes a message and shifts each character by a desired number in order to encode the message and make it unreadable until it is decoded.
 
