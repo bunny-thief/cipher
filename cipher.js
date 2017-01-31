@@ -102,6 +102,7 @@ arr2.forEach(function(e) {
   });
 
 //join chars in array back to a string
-  str = arr2.join("");
-  return str;
+  var result = '';
+  result = arr2.join("");
+  return result;
 }
