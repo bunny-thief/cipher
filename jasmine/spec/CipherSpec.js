@@ -21,7 +21,7 @@ describe("Uppercase", function() {
   });
 
   it("should shift by -25", function() {
-    expect(cipherN("ABCDEFGHIJKLM NOPQRSTUVWXYZ 25")).toEqual("BCDEFGHIJKLMN OPQRSTUVWXYZA");
+    expect(cipherN("ABCDEFGHIJKLM NOPQRSTUVWXYZ -25")).toEqual("BCDEFGHIJKLMN OPQRSTUVWXYZA");
   });
 
 
@@ -57,6 +57,6 @@ describe("Lowercase", function() {
   });
 
   it("should shift by -25", function() {
-    expect(cipherN("abcdefghijklm nopqrstuvwxyz 25")).toEqual("bcdefghijklmn opqrstuvwxyza");
+    expect(cipherN("abcdefghijklm nopqrstuvwxyz -25")).toEqual("bcdefghijklmn opqrstuvwxyza");
   });
 });
