@@ -75,6 +75,6 @@ describe("Numbers", function() {
   });
 
   it("should shift by -25", function() {
-    expect(cipherN("0123456789 -25")).toEqual("4567890123");
+    expect(cipherN("0123456789 -25")).toEqual("5678901234");
   });
 });
