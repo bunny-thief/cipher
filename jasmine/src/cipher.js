@@ -53,6 +53,21 @@ arr2.forEach(function(e) {
     arr.push(96 + (e - 122 + key));
     arr.shift();
   }
+  //0-9
+  else if (e > 47 && e < 58) {
+    key = key % 10;
+
+    //no overflow
+    if (e + key < 58){
+      arr.push(e + key);
+      arr.shift();
+    }
+    //overflow
+    else {
+      arr.push(47 + (e - 57 + key));
+      arr.shift();
+    }
+  }
 
   else {
     arr.push(e);
@@ -92,6 +107,25 @@ arr2.forEach(function(e) {
      arr.shift();
    }
 
+   //0-9
+   else if (e > 47 && e < 58) {
+     key = key % 10;
+
+     //overflow
+     if (e + key < 48){
+       arr.push(57 + (key + (e - 47)));
+       arr.shift();
+     }
+     //no overflow
+     else {
+       arr.push(e + key);
+       arr.shift();
+     }
+   }
+   else {
+     arr.push(e);
+     arr.shift();
+   }
    });
  }
 
