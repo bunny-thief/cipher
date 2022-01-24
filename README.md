@@ -1,4 +1,4 @@
-# [Cipher n](https://the-thief.github.io/cipher/)
+# [Cipher n](https://bunny-thief.github.io/cipher/)
 
 Cipher n is simple encryption method that takes a message and shifts each character by a desired number in order to encode the message and make it unreadable until it is decoded.
 
@@ -18,7 +18,7 @@ This is a personal project but you are welcome to fork this repository.
 
 ## Credits:
 
-I used [Atom.io](https://atom.io/) as my text editor and Chrome Dev Tools to test and debug.
+I used Chrome Dev Tools to debug and Jasmine for testing.
 
 
 ## History:
